@@ -5,9 +5,15 @@
 @endphp
 
 @isset($fornecedores)
-Fornecedor: {{ $fornecedores [0] ['nome'] }}
-<br>
-Status: {{ $fornecedores [0] ['status'] }}
-<br>
-CNPJ: {{ $fornecedores [0] ['cnpj'] }}
+ 
+   @foreach($fornecedores as $indice => $fornecedor)
+     Fornecedor: {{ $fornecedor['nome'] }}
+  <br>
+     Status: {{ $fornecedor['status'] }}
+  <br>
+     CNPJ: {{ $fornecedor['cnpj'] ?? '' }}
+  <br>
+     Telefone: ({{ $fornecedor['ddd'] ?? '' }}) {{ $fornecedor['telefone'] ?? ''}}
+ <hr> 
+  @endforeach
 @endisset
