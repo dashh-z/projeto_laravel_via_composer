@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('filial', 30);
             $table->timestamps();
         });
-        Schema::table('produto_filiais', function(Blueprint $table) {
+        Schema::create('produto_filiais', function(Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('filial_id');
             $table->unsignedBigInteger('produto_id');
