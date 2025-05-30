@@ -36,9 +36,10 @@ class ContatoController extends Controller
             'nome' => 'required',
             'telefone' => 'required',
             'email' => 'required',
-            'motivo_contato' => 'required',
+            'motivo_contatos_id' => 'required',
             'mensagem' => 'required'
         ]);
-        //SiteContato::create($request->all()):
+        SiteContato::create($request->all());
+        return redirect()->route('site.index');
     }
 }
